@@ -1,0 +1,73 @@
+---
+// src/components/OurOffer.astro
+
+const services = [
+    {
+        title: "Lorem ipsum",
+        image: "https://placehold.co/600x400/2a2a2a/666666?text=Maszyna+CNC+1",
+        alt: "Maszyna CNC 1"
+    },
+    {
+        title: "Lorem ipsum",
+        image: "https://placehold.co/600x400/2a2a2a/666666?text=Maszyna+CNC+2",
+        alt: "Maszyna CNC 2"
+    },
+    {
+        title: "Lorem ipsum",
+        image: "https://placehold.co/600x400/2a2a2a/666666?text=Maszyna+CNC+3",
+        alt: "Maszyna CNC 3"
+    },
+    {
+        title: "Lorem ipsum",
+        image: "https://placehold.co/600x400/2a2a2a/666666?text=Maszyna+CNC+4",
+        alt: "Maszyna CNC 4"
+    },
+    {
+        title: "Lorem ipsum",
+        image: "https://placehold.co/600x400/2a2a2a/666666?text=Maszyna+CNC+5",
+        alt: "Maszyna CNC 5"
+    },
+    {
+        title: "Lorem ipsum",
+        image: "https://placehold.co/600x400/2a2a2a/666666?text=Maszyna+CNC+6",
+        alt: "Maszyna CNC 6"
+    }
+];
+---
+
+<section class="w-full bg-[#F4F4F4] py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+        <div class="mb-12 md:mb-16 text-center md:text-left">
+      <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">
+        Nasza oferta
+      </span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[#0F2E24] tracking-tight">
+                Portfolio maszyn
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {services.map((service) => (
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+
+                        <div class="w-full aspect-[4/3] overflow-hidden bg-gray-200">
+                            <img
+                                    src={service.image}
+                                    alt={service.alt}
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+
+                        <div class="bg-primary p-6 flex-grow flex items-center justify-center">
+                            <h3 class="text-white text-xl md:text-2xl font-bold text-center">
+                                {service.title}
+                            </h3>
+                        </div>
+
+                    </div>
+            ))}
+        </div>
+
+    </div>
+</section>

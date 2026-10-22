@@ -1,0 +1,51 @@
+---
+import MachineList from "../../components/machines/MachineList.astro";
+import Layout from "../../layouts/Layout.astro";
+const sampleProducts = [
+    {
+        id: 1,
+        name: "Tokarka kombinowana DMG-MORI CLX 450 V6 z funkcją lasera",
+        imageUrl: "https://images.unsplash.com/photo-1565439390213-93466abf37c7?q=80&w=600&auto=format&fit=crop",
+        origin: "Niemcy",
+        flagUrl: "https://flagcdn.com/w40/de.png",
+        productionYear: "2021",
+        specs: [
+            { label: "Sterowanie", value: "CNC" },
+            { label: "Maks. średnica toczenia", value: "60 mm" },
+            { label: "Długość toczenia", value: "400 mm" },
+            { label: "Prześwit wrzeciona", value: "800 mm" }
+        ]
+    },
+    {
+        id: 2,
+        name: "Centrum frezarskie MTE FBF-S 3000",
+        imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop",
+        origin: "Hiszpania",
+        flagUrl: "https://flagcdn.com/w40/es.png",
+        productionYear: "2019",
+        specs: [
+            { label: "Sterowanie", value: "Heidenhain" },
+            { label: "Zakres X", value: "3000 mm" },
+            { label: "Zakres Y", value: "1000 mm" },
+            { label: "Zakres Z", value: "1200 mm" }
+        ]
+    },
+    {
+        id: 3,
+        name: "Tokarka CNC Haas ST-30",
+        imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600&auto=format&fit=crop",
+        origin: "USA",
+        flagUrl: "https://flagcdn.com/w40/us.png",
+        productionYear: "2022",
+        specs: [
+            { label: "Sterowanie", value: "Haas CNC" },
+            { label: "Maks. średnica toczenia", value: "533 mm" },
+            { label: "Długość toczenia", value: "660 mm" },
+            { label: "Moc wrzeciona", value: "22.4 kW" }
+        ]
+    }
+];
+---
+<Layout title="Maszyny | King Machines">
+    <MachineList products={sampleProducts} />
+</Layout>

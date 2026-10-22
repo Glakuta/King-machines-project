@@ -1,0 +1,71 @@
+---
+import Footer from "../components/sections/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+    type?: 'website' | 'article';
+}
+
+const {
+    title,
+    description = "King Machines - Profesjonalne maszyny przemysłowe. Linie pakujące, dozowniki, wypełniarki, etykietowarki i paletyzatory. Serwis, części zamienne, doradztwo.",
+    image = "/og-image.jpg",
+    type = "website"
+} = Astro.props;
+
+const siteURL = Astro.site || new URL('https://kingmachines.pl');
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const ogImage = new URL(image, siteURL);
+---
+
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="King Machines" />
+    <meta property="og:locale" content="pl_PL" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'King Machines',
+        url: siteURL.toString(),
+        logo: new URL('/logo.svg', siteURL).toString(),
+        contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '+48-22-123-45-67',
+            contactType: 'customer service',
+            availableLanguage: ['Polish', 'English'],
+        },
+        sameAs: [
+            'https://linkedin.com/company/kingmachines',
+            'https://facebook.com/kingmachines',
+        ],
+    })} />
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-white selection:bg-primary selection:text-white">
+    <slot />
+    <Footer />
+</body>
+</html>

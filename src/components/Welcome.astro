@@ -1,0 +1,49 @@
+---
+import astroLogo from '../assets/astro.svg';
+import background from '../assets/background.svg';
+import Hero from "./sections/Hero.astro";
+import OurOffer from "./sections/OurOffer.astro";
+import Values from "./sections/Values.astro";
+import AboutContent from "./sections/AboutContent.astro";
+import LatestArticles from "./sections/LatestArticles.astro";
+import Stats from "./sections/Stats.astro";
+import ContactForm from "./forms/ContactForm.astro";
+import ContactInfo from "./sections/ContactInfo.astro";
+
+const blogPosts = [
+    {
+        id: 1,
+        title: "ITT-TECHNIKA na targach ITM Industry Europe 2026 w Poznaniu",
+        excerpt: "Stoisko ITT-TECHNIKA – obrabiarki CNC do obróbki wielkogabarytowej Na targach ITM Industry Europe 2026 w Poznaniu prezentowaliśmy bogatą ofertę obrabiarek CNC do obróbki elementów wielkogabarytowych.",
+        imageUrl: "https://images.unsplash.com/photo-1565439390213-93466abf37c7?q=80&w=1200&auto=format&fit=crop", // Podmień na własny URL
+        isFeatured: true,
+        url: "/blog/itt-technika-targi-itm-2026"
+    },
+    {
+        id: 2,
+        title: "Hiszpańskie centra frezarskie MTE",
+        excerpt: "Europejska precyzja. Globalna renoma. MTE to marka o silnej pozycji...",
+        imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", // Podmień na własny URL
+        url: "/blog/hiszpanskie-centra-frezarskie-mte"
+    },
+    {
+        id: 3,
+        title: "ITT-Technika na targach branżowych",
+        excerpt: "ITT-TECHNIKA na targach ITM Industry Europe 2026 w Poznaniu Stoisko...",
+        imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop", // Podmień na własny URL
+        url: "/blog/itt-technika-targi-branzowe"
+    }
+];
+
+---
+
+<div>
+    <Hero />
+    <OurOffer />
+    <Values />
+    <AboutContent />
+    <Stats />
+    <LatestArticles posts={blogPosts} />
+    <ContactInfo />
+</div>
+
